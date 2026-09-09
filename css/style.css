@@ -608,15 +608,17 @@ section {
         width: 100%;
         max-width: 360px;
         margin: 0 auto;
+        min-height: auto;
     }
-    
+
     .profile-image-wrapper {
-        width: 160px; /* Mas malaki pa rin sa mobile */
-        height: 160px;
+        width: min(85vw, 300px);
+        height: min(95vw, 340px);
     }
-    
+
     .profile-panel {
-        padding: 1.2rem 1.5rem;
+        width: 100%;
+        padding: 1rem 1.2rem;
     }
 }
 
@@ -624,47 +626,12 @@ section {
     .profile-container {
         max-width: 300px;
     }
-    
-    .profile-image-wrapper {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .profile-panel {
-        padding: 1rem 1.2rem;
-    }
-    
-    .profile-panel .stat {
-        font-size: 0.8rem;
-        padding: 0.4rem 0;
-    }
-}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .profile-container {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-    
     .profile-image-wrapper {
-        width: 120px;
-        height: 120px;
+        width: min(85vw, 280px);
+        height: min(95vw, 320px);
     }
-    
-    .profile-panel {
-        padding: 1rem 1.2rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .profile-image-wrapper {
-        width: 100px;
-        height: 100px;
-    }
-    
     .profile-panel .stat {
         font-size: 0.8rem;
         padding: 0.4rem 0;
