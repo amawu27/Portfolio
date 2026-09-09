@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            cursor: url('assets/cursor/cursor.cur') 16 16, auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol · Player Profile</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Google Fonts - Gaming Themed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Oxanium:wght@200;300;400;500;600;700;800&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- PRESS START OVERLAY - ENHANCED -->
+<div id="start-overlay">
+  <!-- Scanline overlay -->
+  <div class="scanline"></div>
+  
+  <div class="start-content">
+    <div class="logo-big">
+      <i class="fas fa-gamepad"></i>
+    </div>
+    <div class="start-title">PLAYER PROFILE</div>
+    <div class="start-subtitle">
+      <i class="fas fa-chevron-circle-right"></i> 
+      READY TO EXPLORE? 
+      <i class="fas fa-chevron-circle-left"></i>
+    </div>
+    <button id="start-btn">
+      <i class="fas fa-play" style="margin-right: 10px;"></i> PRESS START
+    </button>
+    <div class="start-level">
+      </i>LEVEL 01 · BEGINNER</i>
+    </div>
+  </div>
+</div>
+
+    <!-- ACHIEVEMENT TOAST -->
+    <div id="achieve-toast">🏆 achievement unlocked</div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-left">
+            <button class="nav-logo" id="navLogoBtn">
+                <i class="fas fa-gamepad"></i>
+            </button>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            <button class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Toast Notification Container -->
+    <div id="achieve-toast" style="display: none;"></div>
+
+
+    <!-- HOME -->
+    <section id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Christian Paul Diaz.</h1>
+                <div class="subhead">Computer Science Student</div>
+                <p>I'm a Computer Science student who enjoys learning how things work and trying out new things in
+                    technology.</p>
+                <div class="btn-group">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="assets/CV.pdf" class="btn btn-outline">Download CV</a>
+                </div>
+            </div>
+            <!-- Profile Image and Panel Container -->
+            <div class="profile-container">
+                <!-- Profile Image on top -->
+                <div class="profile-image-wrapper">
+                    <img src="assets/images/avatar2.png" alt="Christian Paul Diaz" class="profile-avatar">
+                </div>
+                <!-- Player Profile Card below the image -->
+                <div class="profile-panel">
+                    <div
+                        style="display:flex; gap:0.8rem; align-items:center; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem;">
+                        <i class="fas fa-id-card" style="color:var(--maroon); font-size:1.2rem;"></i>
+                        <span class="stat-value"">PLAYER PROFILE</span>
+                    </div>
+                    <div class=" stat"><span class="stat-label">Status</span><span class="stat-value">Learning</span>
+                    </div>
+                    <div class="stat"><span class="stat-label">Experience</span><span class="stat-value">Beginner</span>
+                    </div>
+                    <div class="stat"><span class="stat-label">Level</span><span class="stat-value"
+                            id="playerLevel">01</span></div>
+                    <div class="stat"><span class="stat-label">Current Focus</span><span class="stat-value">Web
+                            Development</span></div>
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:45%;"></div>
+                    </div>
+                    <div
+                        style="display:flex; justify-content:space-between; font-size:0.7rem; opacity:0.5; margin-top:0.3rem;">
+                        <span>450 XP</span>
+                        <span>1000 XP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION WITH ARROW BOXES (matches CLASS SPEC design) -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="glass-card" style="margin-bottom:2rem;">
+            <p style="font-size:1.05rem;">Currently a Computer Science student at <strong>Philippine Christian
+                    University</strong>. Driven by a deep curiosity for how complex digital frameworks connect. My
+                mission is to grow from a beginner developer into an adaptable, full-stack engineer who builds scalable
+                applications. I enjoy testing out different tools, learning from mistakes, and playing games that
+                inspire my system layouts.</p>
+        </div>
+
+        <div class="about-arrow-grid">
+            <!-- Box 1: Currently Learning -->
+            <div class="about-arrow-box">
+                <div class="box-header">
+                    <i class="fas fa-code"></i>
+                    <span>Currently Learning</span>
+                </div>
+                <ul class="arrow-items">
+                    <li><i class="fas fa-arrow-right"></i> HTML &amp; CSS Layouts</li>
+                    <li><i class="fas fa-arrow-right"></i> JavaScript Logic</li>
+                    <li><i class="fas fa-arrow-right"></i> Git &amp; GitHub Versioning</li>
+                    <li><i class="fas fa-arrow-right"></i> Basic Programming</li>
+                </ul>
+            </div>
+
+            <!-- Box 2: Goal -->
+            <div class="about-arrow-box">
+                <div class="box-header">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Goal</span>
+                </div>
+                <ul class="arrow-items">
+                    <li><i class="fas fa-arrow-right"></i> Become a better developer</li>
+                    <li><i class="fas fa-arrow-right"></i> Build real-world projects</li>
+                    <li><i class="fas fa-arrow-right"></i> Gain professional experience</li>
+                    <li><i class="fas fa-arrow-right"></i> Master frameworks</li>
+                </ul>
+            </div>
+
+            <!-- Box 3: Strengths -->
+            <div class="about-arrow-box">
+                <div class="box-header">
+                    <i class="fas fa-star"></i>
+                    <span>Strengths</span>
+                </div>
+                <ul class="arrow-items">
+                    <li><i class="fas fa-arrow-right"></i> Willing to learn</li>
+                    <li><i class="fas fa-arrow-right"></i> Adaptable</li>
+                    <li><i class="fas fa-arrow-right"></i> Problem solving</li>
+                    <li><i class="fas fa-arrow-right"></i> Teamwork</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Skills Inventory</h2>
+        <div class="skill-grid" id="skillGrid">
+            <!-- HTML -->
+            <div class="skill-item" data-skill="HTML">
+                <div class="skill-name">HTML</div>
+                <div class="level">LEVEL 03</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:80%;"></div>
+                    </div>
+                    <div class="xp-text">800 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Webpage structure, semantic elements, forms, and basic accessibility
+                </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill-item" data-skill="CSS">
+                <div class="skill-name">CSS</div>
+                <div class="level">LEVEL 02</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:60%;"></div>
+                    </div>
+                    <div class="xp-text">600 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Layouts, Grid, styling, and basic animations</div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skill-item" data-skill="JavaScript">
+                <div class="skill-name">JavaScript</div>
+                <div class="level">LEVEL 02</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:55%;"></div>
+                    </div>
+                    <div class="xp-text">550 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Variables, functions, loops, arrays</div>
+            </div>
+
+            <!-- Java -->
+            <div class="skill-item" data-skill="Java">
+                <div class="skill-name">Java</div>
+                <div class="level">LEVEL 05</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:95%;"></div>
+                    </div>
+                    <div class="xp-text">950 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Basic syntax, variables, loops, methods, and object-oriented programming
+                </div>
+            </div>
+
+            <!-- Git/GitHub -->
+            <div class="skill-item" data-skill="Git/GitHub">
+                <div class="skill-name">Git/GitHub</div>
+                <div class="level">LEVEL 01</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:20%;"></div>
+                    </div>
+                    <div class="xp-text">200 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Commits, branching, push</div>
+            </div>
+
+            <!-- C++ -->
+            <div class="skill-item" data-skill="C++">
+                <div class="skill-name">C++</div>
+                <div class="level">LEVEL 02</div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar">
+                        <div class="xp-fill" style="width:55%;"></div>
+                    </div>
+                    <div class="xp-text">550 / 1000 XP</div>
+                </div>
+                <div class="skill-hover-detail">Basic syntax, variables, functions, loops, arrays, and object-oriented
+                    programming</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="glass-card education-card">
+            <!-- CURRENT LEVEL Header -->
+            <div class="edu-header">
+                <i class="fas fa-trophy"></i>
+                <span>CURRENT LEVEL</span>
+            </div>
+
+            <!-- University Info -->
+            <div class="edu-university">
+                <span class="edu-degree">Philippine Christian University Com-Sci (2024–Present)</span>
+                <span class="edu-desc">Bachelor of Science in Computer Science — Philippine Christian University.
+                    Currently building my knowledge in programming, algorithms, and software development.</span>
+            </div>
+
+            <!-- Milestones with Arrows -->
+            <div class="edu-milestones">
+                <div class="edu-milestone-item">
+                    <span>Started learning programming</span>
+                    <span class="milestone-desc">Learning basic programming concepts, syntax, and how to solve problems
+                        using code.</span>
+                </div>
+                <div class="edu-milestone-item">
+                    <span>Learned data structure and algorithm</span>
+                    <span class="milestone-desc">Learning how to organize data and understand basic algorithms for
+                        solving problems efficiently.</span>
+                </div>
+                <div class="edu-milestone-item">
+                    <span>Started building small practice applications</span>
+                    <span class="milestone-desc">Applying what I learned by creating simple programs and small practice
+                        projects.</span>
+                </div>
+                <div class="edu-milestone-item">
+                    <span>Still learning basic web development</span>
+                    <span class="milestone-desc">Exploring HTML, CSS, and JavaScript while learning how to build and
+                        style simple websites.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOBBIES SECTION ===== -->
+    <section id="hobbies">
+        <h2 class="section-title">Hobbies</h2>
+        <div class="hobby-grid" id="hobbyGrid">
+            <div class="hobby-card" data-modal="gaming">
+                <i class="fas fa-gamepad"></i>
+                <div>Gaming</div>
+                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="hobby-card" data-modal="music">
+                <i class="fas fa-headphones"></i>
+                <div>Listening to Music</div>
+                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="hobby-card" data-modal="movies">
+                <i class="fas fa-film"></i>
+                <div>Watching Anime</div>
+                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="hobby-card" data-modal="tech">
+                <i class="fas fa-laptop-code"></i>
+                <div>Exploring Technology</div>
+                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== AUDIO ELEMENTS (Hidden) ===== -->
+    <audio id="audioSky" src="assets/music/tothesky.mp3" preload="metadata"></audio>
+    <audio id="audioDee" src="assets/music/ladadee.mp3" preload="metadata"></audio>
+    <audio id="audioAphro" src="assets/music/aphrodite.mp3" preload="metadata"></audio>
+    <audio id="audioSun" src="assets/music/sunkissed.mp3" preload="metadata"></audio>
+
+    <!-- ===== MUSIC SECTION ===== -->
+    <section id="soundtrack">
+        <h2 class="section-title">My Soundtrack</h2>
+
+        <!-- Currently Playing -->
+        <div class="currently-playing" id="currentlyPlaying" style="display:none;">
+            <div class="now-playing-label">
+                <i class="fas fa-circle"></i> CURRENTLY PLAYING
+            </div>
+            <div class="now-playing-info">
+                <div class="now-playing-art">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="now-playing-details">
+                    <div class="now-playing-title" id="nowPlayingTitle">To The Sky</div>
+                    <div class="now-playing-artist" id="nowPlayingArtist">Owl City</div>
+                </div>
+                <div class="now-playing-time">
+                    <span id="currentTime">00:00</span>
+                    <span>/</span>
+                    <span id="totalTime">03:39</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Track Grid -->
+        <div class="track-grid" id="trackGrid">
+            <div class="track-card" data-track="To The Sky" data-artist="Owl City" data-audio="audioSky">
+                <div class="track-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/75/To_the_Sky_Owl_City.jpg" alt="To The Sky">
+                </div>
+                <div class="track-info">
+                    <div class="song">To The Sky</div>
+                    <div class="artist">Owl City</div>
+                </div>
+                <button class="track-play-btn" data-track="To The Sky" data-artist="Owl City" data-audio="audioSky">
+                    <i class="fas fa-play"></i> Play Track
+                </button>
+            </div>
+
+            <div class="track-card" data-track="La Da Dee" data-artist="Cody Simpson" data-audio="audioDee">
+                <div class="track-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRes0STkchONKgay_n6bQ1qPKopVzATiS57u2xTs6yYVg&s"
+                        alt="La Da Dee">
+                </div>
+                <div class="track-info">
+                    <div class="song">La Da Dee</div>
+                    <div class="artist">Cody Simpson</div>
+                </div>
+                <button class="track-play-btn" data-track="La Da Dee" data-artist="Cody Simpson" data-audio="audioDee">
+                    <i class="fas fa-play"></i> Play Track
+                </button>
+            </div>
+
+            <div class="track-card" data-track="Aphrodite" data-artist="The Ridleys" data-audio="audioAphro">
+                <div class="track-image">
+                    <img src="https://f4.bcbits.com/img/a3175401626_16.jpg" alt="Aphrodite">
+                </div>
+                <div class="track-info">
+                    <div class="song">Aphrodite</div>
+                    <div class="artist">The Ridleys</div>
+                </div>
+                <button class="track-play-btn" data-track="Aphrodite" data-artist="The Ridleys" data-audio="audioAphro">
+                    <i class="fas fa-play"></i> Play Track
+                </button>
+            </div>
+
+            <div class="track-card" data-track="Sunkissed" data-artist="Khai Dreams" data-audio="audioSun">
+                <div class="track-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmE4bEB2C-0SewlufPrzklJ5RTgZxVmk_S0hJonRe_6xcX6-Ci2UKT85fl&s=10"
+                        alt="Sunkissed">
+                </div>
+                <div class="track-info">
+                    <div class="song">Sunkissed</div>
+                    <div class="artist">Khai Dreams</div>
+                </div>
+                <button class="track-play-btn" data-track="Sunkissed" data-artist="Khai Dreams" data-audio="audioSun">
+                    <i class="fas fa-play"></i> Play Track
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== MINI PLAYER ===== -->
+    <div id="mini-player" style="display:none;">
+        <div class="mini-player-content">
+            <div class="mini-track-info">
+                <div class="mini-art" id="miniArt">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="mini-details">
+                    <div class="mini-song" id="miniSong">To The Sky</div>
+                    <div class="mini-artist" id="miniArtist">Owl City</div>
+                </div>
+            </div>
+            <div class="mini-controls">
+                <button class="mini-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button class="mini-btn play-btn" id="miniPlayPause"><i class="fas fa-play"></i></button>
+                <button class="mini-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                <button class="mini-btn" id="miniStop"><i class="fas fa-stop"></i></button>
+            </div>
+            <div class="mini-progress-wrap">
+                <span class="mini-time current" id="miniCurrentTime">00:00</span>
+                <div class="mini-progress-bar">
+                    <div class="mini-progress-fill" id="miniProgressFill"></div>
+                </div>
+                <span class="mini-time total" id="miniTotalTime">03:39</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HOBBY MODAL ===== -->
+    <div class="modal-overlay" id="hobbyModal">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+
+            <!-- Fixed Header -->
+            <div class="modal-header">
+                <h2 id="modalTitle">
+                    <i class="fas fa-gamepad"></i> My Game Library
+                </h2>
+            </div>
+
+            <!-- Scrollable Body -->
+            <div class="modal-body" id="modalBody">
+                <!-- Tabs for Gaming -->
+                <div class="modal-tabs" id="modalTabs" style="display:none;">
+                    <button class="modal-tab active" data-tab="moba">⚔️ MOBA</button>
+                    <button class="modal-tab" data-tab="fps">🔫 FPS</button>
+                    <button class="modal-tab" data-tab="action">🎯 Action/Adventure</button>
+                </div>
+
+                <div class="modal-grid" id="modalGrid">
+                    <!-- Dynamic content loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-wrap">
+            <!-- LEFT: Contact Form -->
+            <div class="contact-form glass-card">
+                <p style="margin-bottom:1.2rem;">I'm currently learning and looking for opportunities to grow, gain
+                    experience, and connect with people in the tech industry.</p>
+                <input type="text" placeholder="Your name" id="contactName" required />
+                <input type="email" placeholder="Your email" id="contactEmail" required />
+                <textarea placeholder="Enter your message details..." id="contactMessage" required></textarea>
+                <button type="button" class="btn btn-primary" style="width:100%;" id="sendMessageBtn">
+                    <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Send Message
+                </button>
+                <div id="formFeedback" style="margin-top:12px; display:none;"></div>
+            </div>
+
+            <!-- RIGHT: Socials + Controller -->
+            <div class="contact-side glass-card">
+                <!-- Gamepad Icon -->
+                <div style="text-align:center; margin-bottom:1.5rem;">
+                    <i class="fas fa-gamepad" style="font-size:3rem; color:var(--maroon);"></i>
+                    <p style="margin-top:8px; font-size:0.8rem; opacity:0.6;">Let's connect!</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social">
+                    <a href="https://github.com/amawu27" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:christianpaul27@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Christian Paul Diaz. All Rights Reserved.</footer>
+
+
+    <!-- TERMINAL TOGGLE + TERMINAL -->
+    <button id="terminal-toggle">
+        <i class="fas fa-terminal"></i>
+    </button>
+
+    <div id="mini-terminal">
+        <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+
+            <span class="terminal-title">TERMINAL v1.0</span>
+
+            <button class="terminal-close" id="termClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="term-output"></div>
+
+        <div class="terminal-input-wrap">
+            <span class="prompt-symbol">💬</span>
+            <input id="termInput" type="text" placeholder="type your command..." />
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- JavaScript Files -->
+    <script src="js/achievement.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/easteregg.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hobby-modal.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
