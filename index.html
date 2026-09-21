@@ -81,7 +81,7 @@
     <section id="home">
         <div class="hero">
             <div class="hero-content">
-                <h1>Hi, I'm Christian Paul Diaz.</h1>
+                <h1>Hi, I'm Christian Paul Diaz</h1>
                 <div class="subhead">Computer Science Student</div>
                 <p>I'm a Computer Science student who enjoys learning how things work and trying out new things in
                     technology.</p>
@@ -186,25 +186,39 @@
         <h2 class="section-title">Projects</h2>
         <div class="project-grid" id="projectGrid">
             <!-- PORTFOLIO -->
-             <div class="project-item" id="portfolio">
+            <a href="https://christian-diaz-portfolio.vercel.app/" 
+                target="_blank" 
+                rel="noopener" 
+                class="project-item" 
+                id="portfolio">
                 <div class="project-name">Portfolio Website — Player Profile</div>
-                    <ul class="project-list">
-                        <li>Gamified personal portfolio with XP bars, levels, and achievements</li>
-                        <li>Built with vanilla HTML, CSS, and JavaScript (8 modular JS files)</li>
-                        <li>Interactive systems: music player, terminal, hobby modals, easter eggs</li>
-                        <li>Deployed on Vercel · Source on GitHub</li>
-                    </ul>
-             </div>
+                <ul class="project-list">
+                    <li>Gamified personal portfolio with XP bars, levels, and achievements</li>
+                    <li>Built with vanilla HTML, CSS, and JavaScript (8 modular JS files)</li>
+                    <li>Interactive systems: music player, terminal, hobby modals, easter eggs</li>
+                    <li>Deployed on Vercel · Source on GitHub</li>
+                </ul>
+                <div class="project-visit">
+                    Visit Site <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
 
-             <div class="project-item" id="miniGames">
-                <div class="project-name">Text-Based RPG</div>
+            <a href="https://text-based-rpg-game.vercel.app/" 
+                target="_blank" 
+                rel="noopener" 
+                class="project-item" 
+                id="miniGames">
+                    <div class="project-name">Text-Based RPG</div>
                     <ul class="project-list">
                         <li>Browser-based RPG where players defeat a dragon to save the town</li>
                         <li>Combat system with attack, dodge, and run options</li>
                         <li>Progression: earn XP and gold, buy weapons, fight stronger monsters</li>
                         <li>Built with pure HTML, CSS, and JavaScript</li>
                     </ul>
-             </div>
+                    <div class="project-visit">
+                        Play Game <i class="fas fa-arrow-right"></i>
+                    </div>
+            </a>
         </div>
     </section>
 
@@ -339,32 +353,31 @@
     </section>
 
     <!-- ===== HOBBIES SECTION ===== -->
-    <section id="hobbies">
-        <h2 class="section-title">Hobbies</h2>
-        <div class="hobby-grid" id="hobbyGrid">
-            <div class="hobby-card" data-modal="gaming">
-                <i class="fas fa-gamepad"></i>
-                <div>Gaming</div>
-                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
-            </div>
-            <div class="hobby-card" data-modal="music">
-                <i class="fas fa-headphones"></i>
-                <div>Listening to Music</div>
-                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
-            </div>
-            <div class="hobby-card" data-modal="movies">
-                <i class="fas fa-film"></i>
-                <div>Watching Anime</div>
-                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
-            </div>
-            <div class="hobby-card" data-modal="tech">
-                <i class="fas fa-laptop-code"></i>
-                <div>Exploring Technology</div>
-                <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
-            </div>
+<section id="hobbies">
+    <h2 class="section-title">Hobbies</h2>
+    <div class="hobby-grid" id="hobbyGrid">
+        <div class="hobby-card" data-modal="gaming">
+            <i class="fas fa-gamepad"></i>
+            <div class="hobby-name">Gaming</div>
+            <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
         </div>
-    </section>
-
+        <div class="hobby-card" data-modal="music">
+            <i class="fas fa-headphones"></i>
+            <div class="hobby-name">Listening to Music</div>
+            <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="hobby-card" data-modal="movies">
+            <i class="fas fa-film"></i>
+            <div class="hobby-name">Watching Anime</div>
+            <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="hobby-card" data-modal="tech">
+            <i class="fas fa-laptop-code"></i>
+            <div class="hobby-name">Exploring Technology</div>
+            <div class="hobby-click">Click to view <i class="fas fa-arrow-right"></i></div>
+        </div>
+    </div>
+</section>
 
     <!-- ===== AUDIO ELEMENTS (Hidden) ===== -->
     <audio id="audioSky" src="assets/music/tothesky.mp3" preload="metadata"></audio>
