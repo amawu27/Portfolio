@@ -205,7 +205,7 @@ const TerminalSystem = {
                 break;
 
             case 'open rpg':
-                    window.open('https://github.com/amawu27', '_blank');
+                    window.open('https://text-based-rpg-game.vercel.app', '_blank');
                     response = '🌐 Opening <b>Text-Based RPG</b> on GitHub...';
                     
                 icon = '🔗';
