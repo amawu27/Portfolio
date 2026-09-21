@@ -2484,3 +2484,128 @@ footer {
         font-size: 0.8rem;
     }
 }
+
+/* ===== PROJECTS SECTION ===== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-item {
+    background: var(--card);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 1.5rem 1.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;   /* ensures the ::before bar stays inside */
+}
+
+/* Red glow on hover (matches Skills cards) */
+.project-item:hover {
+    border-color: var(--maroon);
+    transform: translateY(-5px);   /* ← match .about-arrow-box exactly */
+    box-shadow: 0 0 30px var(--glow);
+}
+
+/* Remove the ::before gradient bar entirely — it's what's causing the mismatch */
+.project-item::before {
+    display: none;
+}
+
+.project-item:hover::before {
+    opacity: 1;
+}
+
+/* Project title */
+.project-name {
+    font-family: 'Oxanium', 'Rajdhani', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Add a small icon before each project name */
+.project-name::before {
+    content: '◆';
+    color: var(--maroon);
+    font-size: 0.9rem;
+}
+
+/* Project list */
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-list li {
+    font-size: 0.95rem;
+    color: var(--text);
+    opacity: 0.85;
+    padding-left: 1.4rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* Custom arrow bullet */
+.project-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--maroon);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .project-item {
+        padding: 1.3rem 1.4rem;
+    }
+    
+    .project-name {
+        font-size: 1.2rem;
+    }
+    
+    .project-list li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Light mode overrides */
+body.light .project-item {
+    background: var(--light-card);
+    border-color: var(--light-border);
+}
+
+body.light .project-item:hover {
+    border-color: var(--light-maroon);
+    box-shadow: 0 0 30px var(--light-maroon);
+}
+
+body.light .project-name {
+    border-bottom-color: var(--light-border);
+}
+
+body.light .project-name::before,
+body.light .project-list li::before {
+    color: var(--light-maroon);
+}

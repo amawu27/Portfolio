@@ -152,57 +152,39 @@ document.addEventListener('DOMContentLoaded', function () {
         new Set();
 
     navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Close mobile nav
+        if (navLinksContainer) {
+            navLinksContainer.classList.remove('open');
+        }
 
-        link.addEventListener('click', (e) => {
+        // Get section ID
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        const sectionId = href.substring(1);
 
-            // Close mobile navigation
-            if (navLinksContainer) {
-                navLinksContainer.classList.remove('open');
+        // Immediately update UI for responsiveness
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        updateLightBar(sectionId);
+        updatePlayerLevel(sectionId);
+
+        // Mark as visited (for achievement)
+        if (sectionId !== 'home') {
+            link.classList.add('visited');
+            visitedSections.add(sectionId);
+            if (visitedSections.size >= 2 && window.AchievementSystem) {
+                window.AchievementSystem.unlock(
+                    '🔍 EXPLORER',
+                    'Visited multiple sections.'
+                );
             }
+        }
 
-            // Active state
-            navLinks.forEach(l => {
-                l.classList.remove('active');
-            });
-
-            link.classList.add('active');
-
-            // Get section ID
-            const href =
-                link.getAttribute('href');
-
-            if (!href || !href.startsWith('#')) {
-                return;
-            }
-
-            const sectionId =
-                href.substring(1);
-
-            updateLightBar(sectionId);
-            updatePlayerLevel(sectionId);
-
-
-            // ==========================================
-            // MARK SECTION AS VISITED FIRST
-            // ==========================================
-
-            if (sectionId !== 'home') {
-                link.classList.add('visited');
-                visitedSections.add(sectionId);
-
-                // Explorer achievement
-                if (
-                    visitedSections.size >= 2 &&
-                    window.AchievementSystem
-                ) {
-                    window.AchievementSystem.unlock(
-                        '🔍 EXPLORER',
-                        'Visited multiple sections.'
-                    );
-                }
-            }
-        });
+        // Smooth scroll (native behavior handles it since href="#id")
+        // The observer will keep the correct link active as you scroll
     });
+});
 
 
     // ==================================================
@@ -252,66 +234,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // ==================================================
-    // SECTION OBSERVER
-    // COMPLETIONIST ACHIEVEMENT
-    // ==================================================
+// SCROLL SPY — HIGHLIGHT NAV BASED ON CURRENT SECTION
+// ==================================================
 
-    const observerVisitedSections =
-        new Set();
+const observerVisitedSections = new Set();
 
-    if (
-        'IntersectionObserver' in window &&
-        sections.length > 0
-    ) {
-        const sectionObserver =
-            new IntersectionObserver(
-                (entries) => {
+if ('IntersectionObserver' in window && sections.length > 0) {
+    const sectionObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
 
-                    entries.forEach(entry => {
+                const id = entry.target.id;
+                if (!id) return;
 
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        'active',
+                        link.getAttribute('href') === `#${id}`
+                    );
+                });
 
-                        const id =
-                            entry.target.id;
+                updateLightBar(id);
+                updatePlayerLevel(id);
 
-                        if (id) {
+                // Track visited for achievement
+                observerVisitedSections.add(id);
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-
-        if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-        }
-    });
-
-    updateLightBar(id);
-    updatePlayerLevel(id);
-
-    observerVisitedSections.add(id);
-}
-
-                        if (
-                            observerVisitedSections.size >= 6 &&
-                            window.AchievementSystem
-                        ) {
-                            window.AchievementSystem.unlock(
-                                '⭐ COMPLETIONIST',
-                                'Explored the entire website.'
-                            );
-                        }
-                    });
-                },
-                {
-                    threshold: 0.4
+                if (
+                    observerVisitedSections.size >= 6 &&
+                    window.AchievementSystem
+                ) {
+                    window.AchievementSystem.unlock(
+                        '⭐ COMPLETIONIST',
+                        'Explored the entire website.'
+                    );
                 }
-            );
+            });
+        },
+        {
+            rootMargin: '-45% 0px -45% 0px',
+            threshold: 0
+        }
+    );
 
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-    }
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+}
 
 
     // ==================================================

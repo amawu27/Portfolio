@@ -168,7 +168,7 @@ const TerminalSystem = {
             case 'help':
                 response =
                     '<b>Available Commands:</b><br>' +
-                    'about, skills, education, hobbies, ' +
+                    'about, projects, skills, education, hobbies, ' +
                     'contact, clear, theme, whoami, date, credits';
 
                 icon = '💡';
@@ -181,6 +181,34 @@ const TerminalSystem = {
                     'Passionate about building things.';
 
                 icon = '👨‍💻';
+                break;
+
+            case 'projects':
+                response =
+                    '<b>My Projects</b><br><br>' +
+                    '<b>1. Portfolio Website — Player Profile</b><br>' +
+                    'Gamified portfolio with XP, achievements, terminal, and music player.<br>' +
+                    '<i>HTML · CSS · JavaScript · Vercel · Github</i><br><br>' +
+                    '<b>2. Text-Based RPG (Dragon Repeller)</b><br>' +
+                    'Browser RPG with combat, shop, and monster progression.<br>' +
+                    '<i>HTML · CSS · JavaScript</i><br><br>' +
+                    'Type "open portfolio" or "open rpg" to visit them.';
+
+                icon = '🚀';
+                break;
+
+            case 'open portfolio':
+                    window.open('https://christian-diaz-portfolio.vercel.app', '_blank');
+                    response = '🌐 Opening <b>Portfolio Website</b> in a new tab...';
+
+                icon = '🔗';
+                break;
+
+            case 'open rpg':
+                    window.open('https://github.com/amawu27', '_blank');
+                    response = '🌐 Opening <b>Text-Based RPG</b> on GitHub...';
+                    
+                icon = '🔗';
                 break;
 
             case 'skills':
